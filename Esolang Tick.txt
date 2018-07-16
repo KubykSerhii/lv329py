@@ -1,0 +1,13 @@
+https://www.codewars.com/kata/esolang-tick/train/python
+
+def interpreter(tape):
+    d = {0:0}
+    iterator = 0
+    s = ''
+    for com in tape:
+        if com == '>': iterator += 1
+        elif com == '<': iterator -= 1
+        elif com == '*': s += chr(d[iterator])
+        elif com == '+' : d[iterator] = (d[iterator]+1)%256
+        if d.get(iterator) == None : d[iterator] = 0     
+    return s
