@@ -1,0 +1,11 @@
+https://www.codewars.com/kata/file-path-operations
+
+class FileMaster():
+    def __init__(self, filepath):
+        self.fp = filepath
+    def extension(self):
+        return self.fp[self.fp.find('.')+1:]
+    def filename(self):
+        return self.fp[self.fp.rfind('/')+1:self.fp.find('.')]
+    def dirpath(self):
+        return self.fp[:self.fp.rfind('/')+1]
