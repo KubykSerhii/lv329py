@@ -1,0 +1,8 @@
+https://www.codewars.com/kata/no-yelling/train/python
+
+
+def filter_words(st):
+    while st.find('  ') != -1:st=st.replace('  ',' ')
+    if(st[-1] == ' '):st = st[:-1]
+    return st[0].upper()+st[1:].lower()
+
