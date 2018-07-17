@@ -1,0 +1,9 @@
+https://www.codewars.com/kata/noob-debug-1-fix-the-string-sum/train/python
+
+def add(s1, s2):
+    s1 = s1.encode()
+    s2 = s2.encode()
+    c1 = sum(s1)
+    c2 = sum(s2)
+    return c1+c2
+
