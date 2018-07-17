@@ -1,0 +1,7 @@
+def nth_fib(n):
+    fib = [0,1]
+    if n<3:
+        return fib[n-1]
+    for i in range(3,n+1):
+        fib = [ fib[1], fib[0] + fib[1] ]
+    return fib[1]
