@@ -1,0 +1,11 @@
+https://www.codewars.com/kata/interactive-dictionary
+
+class Dictionary():
+    def __init__(self):
+        self.Dic = dict()
+        
+    def newentry(self, word, definition):
+        self.Dic[word] = definition
+        
+    def look(self, key):
+        return self.Dic[key] if key in self.Dic else "Can't find entry for "+key
