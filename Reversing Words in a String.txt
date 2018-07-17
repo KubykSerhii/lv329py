@@ -1,0 +1,14 @@
+https://www.codewars.com/kata/reversing-words-in-a-string/train/python
+
+def reverse(st):
+    st = st[::-1]
+    word = ""
+    st_new = ""
+    for ch in st:
+        if ch == " ":
+            st_new += word[::-1] + " "
+            word = ""
+        else:
+            word += ch
+    st_new += word[::-1]
+    return st_new
