@@ -1,0 +1,10 @@
+def gap(g, m, n):
+    primes = []
+    if m % 2 == 0:
+        m += 1
+    for number in range(m,n+1,2):
+        if all(number % dil for dil in range(3,int(number**0.5 + 1),2)):
+            primes.append(number)
+        if len(primes) > 1:
+            if primes[-1] - primes[-2] == g:
+                return [ primes[-2], primes[-1] ]
