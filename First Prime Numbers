@@ -1,17 +1,18 @@
 class Primes:
+
     @staticmethod
     def first(n):
         lst = [2]
         count = 1
         number = 3
         while count < n:
-            for from_lst in lst:
-                if number % from_lst == 0:
-                    number += 1
+            for d in range(3, int(number**0.5)+1,2):
+                if number % d == 0:
                     break
             else:
                 lst.append(number)
                 count += 1
-                number += 2
+            number += 2
         return lst
+        
         
