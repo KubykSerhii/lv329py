@@ -1,0 +1,6 @@
+def filter_list(l):
+    int_l = []
+    for elem in l:
+        if type(elem) == int:
+            int_l += [elem]
+    return int_l
