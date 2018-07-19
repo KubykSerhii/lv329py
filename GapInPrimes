@@ -3,7 +3,10 @@ def gap(g, m, n):
     if m % 2 == 0:
         m += 1
     for number in range(m,n+1,2):
-        if all(number % dil for dil in range(3,int(number**0.5 + 1),2)):
+        for dil in range(3,int(number**0.5 + 1),2):
+            if number % dil == 0:
+                break
+        else:
             primes.append(number)
         if len(primes) > 1:
             if primes[-1] - primes[-2] == g:
