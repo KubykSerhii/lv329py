@@ -3,7 +3,6 @@ def solve(arr):
     sets = [ ''.join( sorted( set(s))) for s in arr ]
     unique = set(sets)
     for elem in unique:
-        if sets.count(elem) == 1:
-            continue
-        output.append( sum([ i for i in range(len(sets)) if elem == sets[i] ]) )
+        if sets.count(elem) > 1:
+            output.append( sum([ i for i in range(len(sets)) if elem == sets[i] ]) )
     return sorted(output)
