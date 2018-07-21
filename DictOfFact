@@ -1,0 +1,11 @@
+def factorsRange(n, m):
+    output = {}
+    for num in range(n,m+1):
+        factors = []
+        for f in range(2, num//2 + 1):
+            if num % f == 0:
+                factors.append(f)
+        if len(factors) == 0:    
+            factors.append('None')
+        output[num] = factors
+    return output
