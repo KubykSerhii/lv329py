@@ -1,0 +1,26 @@
+class Fraction:
+
+    def __init__(self, numerator, denominator):
+        self.top = numerator
+        self.bottom = denominator
+    
+    #Equality test
+    
+    def __eq__(self, other):
+        first_num = self.top * other.bottom
+        second_num = other.top * self.bottom
+        return first_num == second_num
+        
+    def __add__(self, other):
+        numerator = self.top * other.bottom + self.bottom * other.top
+        denominator = self.bottom * other.bottom
+        g = self.Evklid( max(numerator,denominator), min(numerator,denominator))
+        return Fraction(numerator/g, denominator/g)
+        
+    def __repr__(self):
+        return '%s/%s' % (self.top, self.bottom)
+        
+    def Evklid(self, a, b):
+        while b > 0:
+            a,b = b,a%b
+        return a
