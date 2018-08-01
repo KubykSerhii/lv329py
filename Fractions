@@ -14,7 +14,7 @@ class Fraction:
     def __add__(self, other):
         numerator = self.top * other.bottom + self.bottom * other.top
         denominator = self.bottom * other.bottom
-        g = self.Evklid( max(numerator,denominator), min(numerator,denominator))
+        g = self.Evklid(numerator, denominator)
         return Fraction(numerator/g, denominator/g)
         
     def __repr__(self):
