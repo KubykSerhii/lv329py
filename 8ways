@@ -1,0 +1,22 @@
+https://www.codewars.com/kata/eight-ways-to-iterate-over-table/train/python
+
+
+DIRECTION_UP, DIRECTION_LEFT, DIRECTION_DOWN, DIRECTION_RIGHT = range(1,5)
+
+class Table:
+    def __init__(self,data):
+        self.data = data
+    def walk(self,dir0,dir1):
+        for y in self.newRange(dir1):
+            for x in self.newRange(dir0):
+                yield self.data[x][y] if dir1 % 2 == 0 else self.data[y][x]
+        
+    def newRange(self, direct):
+        if direct == 1:
+            return range(len(self.data)-1, -1, -1)
+        if direct == 2:
+            return range(len(self.data[0])-1, -1, -1)
+        if direct == 3:
+            return range(len(self.data))
+        if direct == 4:
+            return range(len(self.data[0]))
