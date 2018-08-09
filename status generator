@@ -1,0 +1,12 @@
+https://www.codewars.com/kata/check-the-status-of-the-generator-expression/train/python
+
+
+import inspect
+
+def check_generator(gen):
+    state = inspect.getgeneratorstate(gen)
+    if state == 'GEN_CREATED':
+        return 'Created'
+    if state == 'GEN_RUNNING'or state == 'GEN_SUSPENDED':
+        return 'Started'
+    return 'Finished'
